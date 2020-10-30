@@ -10,14 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_30_161729) do
-
-  create_table "animals", force: :cascade do |t|
-    t.string "catName"
-    t.string "dogName"
-    t.string "catType"
-    t.string "dogType"
-    t.string "dogSize"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

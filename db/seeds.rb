@@ -9,12 +9,13 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    seed.generate_animals
+    seed.generate_cats
+    seed.generate_dogs
   end
 
-  def generate_animals
+  def generate_dogs
     20.times do |i|
-      animal = Animal.create!(
+      dog = Dog.create!(
         catName: Faker::Creature::Cat.name,
         catType: Faker::Creature::Cat.breed,
         dogName: Faker::Creature::Dog.name,
