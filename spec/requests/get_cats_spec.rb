@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe "get all animals route", :type => :request do
-  let!(:animals) { FactoryBot.create_list(:animal, 20)}
+  let!(:cats) { FactoryBot.create_list(:cat, 20)}
 
-  before { get '/animals'}
+  before { get '/cats'}
 
-  it 'returns all animals' do
+  it 'returns all cats' do
     expect(JSON.parse(response.body).size).to eq(20)
   end
 
