@@ -36,6 +36,15 @@ class AnimalsController < ApplicationController
     @animal.destroy
   end
 
+  def random
+    Animal.all.each do | obj|
+      animal_array.push(obj[:animal])
+    end
+    @animals = Animal.random_location(animal_array)
+    json_response(@animals)
+  end
+
+
   def animal_params
     params.permit(:catType, :catName, :dogType, :dogName, :dogSize)
   end
