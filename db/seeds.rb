@@ -13,19 +13,25 @@ class Seed
     seed.generate_dogs
   end
 
+  def generate_cats
+    20.times do |i|
+      cat = Cat.create!(
+        catName: Faker::Creature::Cat.name,
+        catType: Faker::Creature::Cat.breed
+      )
+    end
+      puts "Cat is #{cat.catName} and the breed is #{cat.catType}'."
+  end
+
   def generate_dogs
     20.times do |i|
       dog = Dog.create!(
-        catName: Faker::Creature::Cat.name,
-        catType: Faker::Creature::Cat.breed,
         dogName: Faker::Creature::Dog.name,
         dogType: Faker::Creature::Dog.breed,
         dogSize: Faker::Creature::Dog.size
-
       )
-      puts "Animal #{i}: Cat is #{animal.catName} and the breed is #{animal.catType}'."
-      puts "Animal #{i}: Dog is #{animal.dogName}, breed is #{animal.dogType}, and the size is #{animal.dogSize}'."
     end
+    puts "Dog is #{dog.dogName}, breed is #{dog.dogType}, and the size is #{dog.dogSize}'."
   end
 end
 

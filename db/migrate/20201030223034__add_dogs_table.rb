@@ -4,5 +4,6 @@ class AddDogsTable < ActiveRecord::Migration[6.0]
       t.column :dogName, :string
       t.column :dogType, :string
       t.column :dogSize, :string
+    end
   end
 end
