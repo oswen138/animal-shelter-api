@@ -1,14 +1,14 @@
 class AnimalsController < ApplicationController
 
   def index
-    @animals = Animal.paginate(page: params[:page], :per_page => 5)
+    @animals = Animal.paginate(page: params[:page], :per_page => 10)
     if params[:cat]
       cat_name = params[:cat]
     end
     if params[:dog]
       dog_name = params[:dog]
     end
-    @animals = Animal.search(params[:cat, :dog])
+    @animals = Animal.search(cat_name, dog_name)
     json_response(@animals)
   end
 
