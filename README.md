@@ -1,57 +1,104 @@
-# README
+# Animal Shelter API application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an API for a local animal shelter. The API will list the available cats and dogs at the shelter.
 
-Things you may want to cover:
+The entire application is contained within the `app.rb` file.
 
-* Ruby version
+## Install
+    Clone  https://github.com/oswen138/animal-shelter-api.git
+    bundle install
+    rake db:create
+    rake db:migrate
+    rake db:seed
 
-* System dependencies
+## Run the app
+    enter rails s in terminal
+    go to localhost:3000   (refer to endpoints below)
 
-* Configuration
+  
+### Request : return list of animals
+`GET http://localhost:3000/animals`
+### Response
 
-* Database creation
+    {
+        "id": 1,
+        "animalType": "Cat",
+        "catName": "Charlie",
+        "dogName": "Misty",
+        "catType": "Ojos Azules",
+        "dogType": "Pomeranian",
+        "dogSize": "small"
+    }, ...
+    {
+        "id": 6,
+        "animalType": "Dog",
+        "catName": "Milo",
+        "dogName": "Tank",
+        "catType": "Foldex Cat",
+        "dogType": "Rat Terrier",
+        "dogSize": "extra large"
+    },
+  
+### Request : return random list of cat by `:id`
+`GET http://localhost:3000/animals/:id`
 
-* Database initialization
+### Request : return random list of either dogs or cats
+`GET http://localhost:3000/animals/?animalType=['cat' or 'dog']`
 
-* How to run the test suite
+### Request : return animal by random
+`GET http://localhost:3000/animals/random`
 
-* Services (job queues, cache servers, search engines, etc.)
+### Request : post a new animal. You can add name by clicking on "Body" in Postman
+`POST http://localhost:3000/animals`
 
-* Deployment instructions
+### Request : update an animal. Just as with the `POST` call, you'll pass in the parameters you want to update in the body
+`PUT http://localhost:3000/animals/:id`
 
-Throttle call attempts for this API is limited to 3 reqs/2 minutes by default. 
-You can customize the limit and period or completely deactivate by commenting/deleting the following code block.
-* ...
- #animal-shelter-API/config/initializers/rack_attack.rb (for rails app)
-
-...
-  Rack::Attack.throttle("requests by ip", limit: 3, period: 2) do |request|
-    request.ip
-  end
-...
-
-Results are paginated with the will_paginate gem.
-You can customize the "per page" limit by adjusting the number on the following code block.
-
+### Request : delete an animal with the corresponding :id
+`DELETE http://localhost:3000/animals/:id`
  #animal-shelter-API/app/controllers/animals_controller.rb 
+ ### Response
 
-...
- @animals = Animal.paginate(page: params[:page], :per_page => 10)
-...
-
-Testing API calls
-
-GET http://localhost:3000/quotes/:id will show an individual quotation by :id.
-POST http://localhost:3000/quotes
-
-Delete a movie
-
-http://localhost:3000/animals/5   ID of 41
-
-{
+    {
     "message": "Animal deleted"
-}
+    }
 
-Put 
+## Notes
+* Throttle call attempts for this API is limited to 3 reqs/2 minutes by default. 
+You can customize the limit and period or completely deactivate by commenting/deleting the following code block.
+## 
+
+    
+    #animal-shelter-API/config/initializers/rack_attack.rb (for rails app)
+    ...  
+      Rack::Attack.throttle("requests by ip", limit: 3, period: 2) do |request|
+      request.ip
+    end
+    ...
+  * Throttle call attempts for this API is limited to 3 reqs/2 minutes by default. 
+You can customize the limit and period or completely deactivate by commenting/deleting the following code block.
+## 
+
+    
+    #animal-shelter-API/app/controllers/animals_controller.rb 
+    ...
+    @animals = Animal.paginate(page: params[:page], :per_page => 10)
+    ...
+
+## Known Bugs
+* Cat and Dog search results are not separate...not sure how to fix this issue yet, need help
+
+## Technologies Used
+* Ruby
+  * Gems: Pry, RSpec, will_paginate, rake_attack, factory_bot
+* Rails
+
+## Support and contact details
+
+_Email no one with any questions, comments, or concerns._
+
+### License
+
+*{This software is licensed under the MIT license}*
+
+Copyright (c) 2020 **_Ophelia Swen_**
