@@ -6,7 +6,7 @@ describe "get all animals route", :type => :request do
   before { get '/animals'}
 
   it 'returns all animals' do
-    expect(JSON.parse(response.body).size).to eq(20)
+    expect(JSON.parse(response.body).size).to eq(10)
   end
 
   it 'returns status code 200' do

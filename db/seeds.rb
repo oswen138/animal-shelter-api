@@ -15,6 +15,7 @@ class Seed
   def generate_animals
     20.times do |i|
       animal = Animal.create!(
+        animalType: animalType.sample,
         catName: Faker::Creature::Cat.name,
         catType: Faker::Creature::Cat.breed,
         dogName: Faker::Creature::Dog.name,

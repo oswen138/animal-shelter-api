@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_10_30_161729) do
 
   create_table "animals", force: :cascade do |t|
+    t.string "animalType"
     t.string "catName"
     t.string "dogName"
     t.string "catType"
