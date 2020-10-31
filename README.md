@@ -4,6 +4,7 @@ This is an API for a local animal shelter. The API will list the available cats 
 
 The entire application is contained within the `app.rb` file.
 
+<<<<<<< HEAD
 ## Install
     Clone  https://github.com/oswen138/animal-shelter-api.git
     bundle install
@@ -102,3 +103,28 @@ _Email no one with any questions, comments, or concerns._
 *{This software is licensed under the MIT license}*
 
 Copyright (c) 2020 **_Ophelia Swen_**
+=======
+`config.ru` is a minimal Rack configuration for unicorn.
+
+`run-tests.sh` runs a simplistic test and generates the API
+documentation below.
+
+It uses `run-curl-tests.rb` which runs each command defined in
+`commands.yml`.
+
+## Install
+    Clone  https://github.com/oswen138/animal-shelter-api.git
+    bundle install
+
+## Run the app
+    
+    localhost:3000    see test API call paths below
+
+## Run the tests
+
+    use rspec command in terminal
+
+## Get list of Things
+
+https://github.com/oswen138/animal-shelter-api.git
+>>>>>>> b3f2ed13bb579a47fd45b39626c2e6f3bee40e9e

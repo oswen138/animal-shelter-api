@@ -9,23 +9,34 @@ class Seed
 
   def self.begin
     seed = Seed.new
-    seed.generate_animals
+    seed.generate_cats
+    seed.generate_dogs
   end
 
-  def generate_animals
+  def generate_cats
     20.times do |i|
+<<<<<<< HEAD
       animal = Animal.create!(
         animalType: animalType.sample,
+=======
+      cat = Cat.create!(
+>>>>>>> b3f2ed13bb579a47fd45b39626c2e6f3bee40e9e
         catName: Faker::Creature::Cat.name,
-        catType: Faker::Creature::Cat.breed,
+        catType: Faker::Creature::Cat.breed
+      )
+    end
+      puts "Cat is #{cat.catName} and the breed is #{cat.catType}'."
+  end
+
+  def generate_dogs
+    20.times do |i|
+      dog = Dog.create!(
         dogName: Faker::Creature::Dog.name,
         dogType: Faker::Creature::Dog.breed,
         dogSize: Faker::Creature::Dog.size
-
       )
-      puts "Animal #{i}: Cat is #{animal.catName} and the breed is #{animal.catType}'."
-      puts "Animal #{i}: Dog is #{animal.dogName}, breed is #{animal.dogType}, and the size is #{animal.dogSize}'."
     end
+    puts "Dog is #{dog.dogName}, breed is #{dog.dogType}, and the size is #{dog.dogSize}'."
   end
 end
 
