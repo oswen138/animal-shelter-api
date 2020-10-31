@@ -1,24 +1,29 @@
-# README
+# Animal Shelter API application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an API for a local animal shelter. The API will list the available cats and dogs at the shelter.
 
-Things you may want to cover:
+The entire application is contained within the `app.rb` file.
 
-* Ruby version
+`config.ru` is a minimal Rack configuration for unicorn.
 
-* System dependencies
+`run-tests.sh` runs a simplistic test and generates the API
+documentation below.
 
-* Configuration
+It uses `run-curl-tests.rb` which runs each command defined in
+`commands.yml`.
 
-* Database creation
+## Install
+    Clone  https://github.com/oswen138/animal-shelter-api.git
+    bundle install
 
-* Database initialization
+## Run the app
+    
+    localhost:3000    see test API call paths below
 
-* How to run the test suite
+## Run the tests
 
-* Services (job queues, cache servers, search engines, etc.)
+    use rspec command in terminal
 
-* Deployment instructions
+## Get list of Things
 
-* ...
+https://github.com/oswen138/animal-shelter-api.git
