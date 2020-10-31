@@ -128,3 +128,5 @@ It uses `run-curl-tests.rb` which runs each command defined in
 
 https://github.com/oswen138/animal-shelter-api.git
 >>>>>>> b3f2ed13bb579a47fd45b39626c2e6f3bee40e9e
+
+git pull attempt messed up files..
